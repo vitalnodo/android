@@ -1,5 +1,6 @@
 import jnim
-import android/view/[view, surface_holder]
+import android/view/[view, surface_holder, motion_event]
 
-jclass android.view.SurfaceView* of View:
-    proc getHolder*(): SurfaceHolder
+jclass android.view.SurfaceView* extends View:
+    proc getHolder*: SurfaceHolder
+    proc onTouchEvent*(evt: MotionEvent): jboolean
